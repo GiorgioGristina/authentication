@@ -15,6 +15,9 @@ const SignInScreen = () => {
     console.log("sign-in");
   }
 
+  const onForgotPasswordPress = () => {
+    console.log("Forgot Password");
+  }
   return(
     <SafeAreaView>
       <Header />
@@ -32,6 +35,13 @@ const SignInScreen = () => {
       <CustomButton 
         onPress={onSignInPress}
         text="Sign In"
+        type="primary"
+
+      />
+      <CustomButton 
+        onPress={onForgotPasswordPress}
+        text="Forgot password?"
+        type="tertiary"
       />
 
     </SafeAreaView>
