@@ -11,6 +11,9 @@ const SignInScreen = () => {
   const [password, setPassword] = useState("")
 
   // console.log(username);
+  const onSignInPress = () => {
+    console.log("sign-in");
+  }
 
   return(
     <SafeAreaView>
@@ -26,7 +29,10 @@ const SignInScreen = () => {
         setValue={setPassword}
         secureTextEntry={true}
       />
-      <CustomButton />
+      <CustomButton 
+        onPress={onSignInPress}
+        text="Sign In"
+      />
 
     </SafeAreaView>
   )
