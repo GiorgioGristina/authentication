@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Pressable } from "react-native"
 
-const CustomButton = ({onPress, text, type}) => {
+const CustomButton = ({onPress, text, type, bgColor, textColor}) => {
 
   // const TypeOfButton = type === 'primary' ? 'primary' : 'tertiary'
 
@@ -8,10 +8,14 @@ const CustomButton = ({onPress, text, type}) => {
     <Pressable 
       onPress={onPress} 
       style={[styles.container, 
-              styles[`container_${type}`] ]}
+              styles[`container_${type}`],
+              bgColor ? {backgroundColor: bgColor} : {}
+            ]}
     >
       <Text style={[styles.text,
-                    styles[`text_${type}`]]}
+                    styles[`text_${type}`],
+                    textColor ? {color: textColor} : {}
+                  ]}
       >
         {text}
       </Text>
@@ -26,6 +30,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     borderRadius: 5,
     // borderWidth:1,
+    alignItems: "center",
   },
   container_primary: {
     backgroundColor: "#3b71fe",
@@ -34,7 +39,6 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    textAlign: "center",
     fontWeight: "bold",
   },
   text_primary: {

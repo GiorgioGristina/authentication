@@ -1,9 +1,13 @@
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, useWindowDimensions } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 
 
 
 const Header = () => {
+
+  const {height} = useWindowDimensions
+
+  console.log(height);
   return(
     <SafeAreaView>
       <Text style={styles.brand}>VirtualIE</Text>

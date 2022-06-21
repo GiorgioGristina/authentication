@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { View, Text } from "react-native"
-import { SafeAreaView } from "react-native"
+import { SafeAreaView, ScrollView } from "react-native"
 import CustomButton from "./components/CustomButton"
 import CustomInput from "./components/CustomInput"
 import Header from "./components/Header"
@@ -19,7 +19,8 @@ const SignInScreen = () => {
     console.log("Forgot Password");
   }
   return(
-    <SafeAreaView>
+    <ScrollView>
+    <SafeAreaView style={{marginHorizontal: 25}}>
       <Header />
       <CustomInput 
         placeholder="Username" 
@@ -43,8 +44,28 @@ const SignInScreen = () => {
         text="Forgot password?"
         type="tertiary"
       />
+      <CustomButton 
+        onPress={onForgotPasswordPress}
+        text="Sign In with Google"
+        // type="tertiary"
+        bgColor="#fae9ea"
+        textColor="#dd4d44"
+      />
+      <CustomButton 
+        onPress={onForgotPasswordPress}
+        text="Sign In with Facebook"
+        // type="tertiary"
+        bgColor="#e7eaf4"
+        textColor="#4765a9"
+      />
+      <CustomButton 
+        onPress={onForgotPasswordPress}
+        text="Don't have an account? Create one"
+        type="tertiary"
+      />
 
     </SafeAreaView>
+    </ScrollView>
   )
 } 
 
